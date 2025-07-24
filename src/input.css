@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+      /* Define custom fonts */
+      @layer utilities {
+        .font-inter {
+          font-family: "Inter", sans-serif;
+        }
+        .font-Kumar {
+          font-family: "Kumar One", serif;
+          font-style: normal;
+        }
+        .font-poppins {
+          font-family: "Poppins", sans-serif;
+        } 
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+.font-sansation {
+  font-family: "Sansation", sans-serif;
+}
+.font-saira{
+  font-family: "Saira", sans-serif;
+}
+.bg-gradient {
+  background: linear-gradient(84deg, black, #00000026, transparent);
+
+}
+        .navy {
+          background-color: #12284B;
+        }
+        .text-navy {
+          color: #12284B;
+        }
+        .bg-warm-gray {
+          background-color: #F9F9F9;
+        }
+        .dark-gray {
+            color: #333333;
+        }
+
+        .bg-navy-blue {
+          background-color: #202A6C;
+        }
+
+         .gallery-container {
+        display: flex;
+        height: 500px;
+        gap: 8px;
+        overflow: hidden;
+      }
+
+      .image-panel {
+        flex: 1;
+        position: relative;
+        transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      /* Normal case - two small images and two large images*/
+      .image-panel:nth-child(1) {
+        flex: 2;
+      }
+      .image-panel:nth-child(2) {
+        flex: 1.5;
+      }
+      .image-panel:nth-child(3) {
+        flex: 0.7;
+      }
+      .image-panel:nth-child(4) {
+        flex: 0.7;
+      }
+
+      /* When hover over any image */
+      .gallery-container:hover .image-panel:not(:hover) {
+        flex: 0.7;
+      }
+
+      /* .gallery-container:hover .image-panel:hover {
+        flex: 4;
+      } */
+
+      /* Blur effect for unselected images */
+      .image-panel::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0.3) 50%,
+          rgba(0, 0, 0, 0.6) 100%
+        );
+        transition: opacity 0.7s ease;
+        /* z-index: 1; */
+      }
+
+      .gallery-container:hover .image-panel:not(:hover)::before {
+        opacity: 0.8;
+      }
+
+      .gallery-container:hover .image-panel:hover::before {
+        opacity: 0;
+      }
+
+      /* .image-panel:hover  {
+        transform: translateY(0);
+        opacity: 1;
+      } */
+
+      /* Side title for small images */
+      .panel-title-vertical {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /* transform: translate(-50%, -50%) rotate(-90deg); */
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        z-index: 2;
+        white-space: nowrap;
+        transition: all 0.7s ease;
+      }
+
+      .image-panel:hover .panel-title-vertical {
+        opacity: 0;
+      }
+
+      /* Shadow effect when hovering */
+      .image-panel:hover {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        transform: translateY(-2px);
+      }
+
+      /* Blur effect for backgrounds */
+      .gallery-container:hover .image-panel:not(:hover) {
+        filter: blur(2px) brightness(0.7);
+      }
+
+      .image-panel:hover {
+        filter: blur(0) brightness(1.1);
+      }
+
+       .shadow-custom {
+        box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.16),
+      }
+      }
+
+/* New Products Swiper Styles */
+.new-products-swiper {
+  overflow: hidden;
+}
+
+.new-products-swiper .swiper-slide {
+  width: 100%;
+}
+
+/* Product card transitions for filtering */
+.new-products-swiper .product-card {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Testimonial Swiper Styles */
+.testimonial-swiper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.testimonial-swiper .swiper-wrapper {
+  width: 100%;
+}
+
+.testimonial-swiper .swiper-slide {
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-image-swiper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.testimonial-image-swiper .swiper-wrapper {
+  width: 100%;
+}
+
+.testimonial-image-swiper .swiper-slide {
+  width: 100% !important;
+}
+
+/* Navigation button hover effects */
+.testimonial-prev-btn:hover,
+.testimonial-next-btn:hover,
+#newProductsPrevBtn:hover,
+#newProductsNextBtn:hover {
+  background-color: #f3f4f6;
+  transform: scale(1.05);
+}
+
+.testimonial-prev-btn:active,
+.testimonial-next-btn:active,
+#newProductsPrevBtn:active,
+#newProductsNextBtn:active {
+  transform: scale(0.95);
+}
+
+/* Ensure navigation buttons are clickable */
+.testimonial-prev-btn,
+.testimonial-next-btn,
+#newProductsPrevBtn,
+#newProductsNextBtn {
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
